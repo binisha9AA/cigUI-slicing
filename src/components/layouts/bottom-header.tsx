@@ -56,9 +56,10 @@ const SingleNavItem = ({
   return (
     <>
       <li
-        className="menu-items flex flex-row items-center justify-center
-        text-white italic font-bold text-lg gap-1 p-0 relative
-        "
+        className={`menu-items flex flex-row items-center justify-center
+        text-white italic font-bold text-lg gap-1 p-0 relative hover:text-secondary-500 focus:text-secondary-500 outline-none focus:outline-none ${
+          isDropdownOpen ? 'text-secondary-500' : ''
+        }`}
         ref={menuRef}
       >
         <FaHouse />
@@ -67,7 +68,7 @@ const SingleNavItem = ({
             <button
               type="button"
               aria-haspopup="menu"
-              className="p-0 "
+              className="flex gap-2 "
               aria-expanded={isDropdownOpen ? 'true' : 'false'}
               onClick={() => {
                 setIsDropdownOpen(!isDropdownOpen);
@@ -320,9 +321,9 @@ export const MegaMenuList = ({ isOpen }: { isOpen: boolean }) => {
     <nav
       className={`${
         isOpen ? 'opacity-100' : 'opacity-0'
-      } transition-opacity max-w-[723px]  p-4  text-black shadow-xl absolute bg-white top-16`}
+      } transition-opacity megamenu-content p-4  text-black shadow-xl absolute bg-white top-16 -mt-2`}
     >
-      <ul className="flex max-w-[217px] flex-col space-y-2 text-white submenu-nav">
+      <ul className="flex flex-col space-y-2 text-white submenu-nav">
         {subMenus?.map((subMenu) => (
           <li
             key={subMenu.id}
@@ -333,13 +334,13 @@ export const MegaMenuList = ({ isOpen }: { isOpen: boolean }) => {
               <IoIosArrowForward />
               {subMenu.menu}
             </span>
-            <ul className="absolute left-full top-0 mt-0 flex hidden  space-y-2 rounded  px-3 group-hover/menu:block w-[217px]">
+            <ul className="absolute left-full top-0 mt-0 flex hidden  space-y-2 rounded  px-3 group-hover/menu:block">
               <li className="group/submenu relative normal text-lg text-grey-900 flex menu-hov">
                 <span className="px-2 py-1 menu-hover font-medium not-italic text-lg flex  items-center">
                   {subMenu.subMenu}
                   <IoIosArrowForward />
                 </span>
-                <ul className="absolute left-full top-0 mt-0 flex hidden flex-col space-y-2 rounded bg-gray-700 p-2 group-hover/submenu:block w-[217px]">
+                <ul className="absolute left-full top-0 mt-0 flex hidden flex-col space-y-2 rounded bg-gray-700 p-2 group-hover/menu:block">
                   {subMenu.items?.map((item) => (
                     <Link to={item.link}>
                       <li className="px-2 py-1 hover:bg-gray-600">
