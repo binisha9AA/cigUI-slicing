@@ -1,4 +1,5 @@
 import BottomHeader from './bottom-header';
+import NewMegaMenu from './bottom-header';
 import MobileNav from './mobile-nav';
 
 const Header = () => {
@@ -6,7 +7,7 @@ const Header = () => {
     <>
       <header>
         <BottomHeader />
-        <MobileNav />
+        {/* <MobileNav /> */}
       </header>
     </>
   );

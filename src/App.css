@@ -258,8 +258,6 @@ h6 {
   content: '';
   left: 16%;
   top: -14%;
-  margin-left: -20px;
-  margin-left: -23px;
   position: absolute;
   border-top-color: #fff;
   transform: rotate(180deg);
@@ -271,7 +269,7 @@ h6 {
   border-right: 20px solid transparent;
   border-top: 23px solid;
   content: '';
-  left: 32%;
+  left: 40px;
   top: -5%;
   margin-left: -20px;
   margin-left: -23px;
@@ -282,3 +280,6 @@ h6 {
   width: 26px;
 }
 /* HEADER CSS ENDS HERE */
+.menu-hov {
+  @apply hover:bg-primary-100 hover:text-primary-500 active:bg-primary-100 active:text-primary-500 z-10;
+}

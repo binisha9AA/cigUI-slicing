@@ -7,6 +7,13 @@ import {
 } from 'react-icons/io';
 import { FaFileInvoice, FaHouse, FaPaperPlane } from 'react-icons/fa6';
 import { Link } from 'react-router-dom';
+import { Home } from '../../icons/home';
+import { Account } from '../../icons/account';
+import { Product } from '../../icons/product';
+import { Content } from '../../icons/content';
+import { MyTeam } from '../../icons/myteam';
+import { Support } from '../../icons/support';
+import { Settings } from '../../icons/setting';
 
 const BottomHeader = () => {
   const depthLevel = 0;
@@ -62,7 +69,7 @@ const SingleNavItem = ({
         }`}
         ref={menuRef}
       >
-        <FaHouse />
+        {<FaHouse />}
         {menu.submenu ? (
           <>
             <button
@@ -77,6 +84,7 @@ const SingleNavItem = ({
               {menu.title}{' '}
               {isDropdownOpen ? <IoIosArrowUp /> : <IoIosArrowDown />}
             </button>
+
             <DropdownMenu
               submenus={menu.submenu}
               isOpen={isDropdownOpen}
@@ -109,7 +117,7 @@ export const DropdownMenu = ({
   return (
     <>
       {type === 'megamenu' ? (
-        <MegaMenuList isOpen={isOpen} />
+        <NewMegaMenu isOpen={isOpen} />
       ) : (
         <NormalMenuList isOpen={isOpen} />
       )}
@@ -140,10 +148,10 @@ export const NormalMenuList = ({ isOpen }: { isOpen: boolean }) => {
       <ul
         className={`${
           isOpen ? 'opacity-100' : 'opacity-0'
-        } transition-opacity flex min-w-[233px] flex-col border-2 bg-white p-3 shadow-xl md:min-w-[233px] mt-4 submenu-nav mx-5 absolute text-black top-10 dropdown-content gap-4`}
+        } transition-opacity flex min-w-[233px] flex-col border-2 bg-white p-3 shadow-xl md:min-w-[233px] mt-4 submenu-nav ml-5 absolute text-black top-10 dropdown-content gap-4`}
       >
         {menus.map((component) => (
-          <li className="flex items-center gap-1 ">
+          <li className="flex items-center gap-1 menu-hov">
             {component.icon}{' '}
             <h5 className="italic font-bold text-lg">{component.title}</h5>
           </li>
@@ -357,16 +365,232 @@ export const MegaMenuList = ({ isOpen }: { isOpen: boolean }) => {
     </nav>
   );
 };
-
+export const NewMegaMenu = ({ isOpen }: { isOpen: boolean }) => {
+  const subMenus = [
+    {
+      id: 1,
+      menu: 'Machines',
+      subMenu: 'Welders',
+      items: [
+        {
+          id: 1,
+          title: 'MIG Welders',
+          link: '/mig-welders',
+        },
+        {
+          id: 2,
+          title: 'TIG Welders',
+          link: '/tig-welders',
+        },
+        {
+          id: 3,
+          title: 'STICK Welders',
+          link: '/tig-welders',
+        },
+        {
+          id: 4,
+          title: 'Multi Process Welders',
+          link: '/tig-welders',
+        },
+      ],
+    },
+    {
+      id: 2,
+      menu: 'Safety',
+      subMenu: 'Power Packs',
+      items: [
+        {
+          id: 1,
+          title: 'MIG Welders',
+          link: '/mig-welders',
+        },
+        {
+          id: 2,
+          title: 'TIG Welders',
+          link: '/tig-welders',
+        },
+        {
+          id: 3,
+          title: 'STICK Welders',
+          link: '/tig-welders',
+        },
+        {
+          id: 4,
+          title: 'Multi Process Welders',
+          link: '/tig-welders',
+        },
+      ],
+    },
+    {
+      id: 3,
+      menu: 'Statements',
+      subMenu: 'Plasma Cutting',
+      items: [
+        {
+          id: 1,
+          title: 'MIG Welders',
+          link: '/mig-welders',
+        },
+        {
+          id: 2,
+          title: 'TIG Welders',
+          link: '/tig-welders',
+        },
+        {
+          id: 3,
+          title: 'STICK Welders',
+          link: '/tig-welders',
+        },
+        {
+          id: 4,
+          title: 'Multi Process Welders',
+          link: '/tig-welders',
+        },
+      ],
+    },
+    {
+      id: 4,
+      menu: 'Accessories',
+      subMenu: 'Plasma Cutting',
+      items: [
+        {
+          id: 1,
+          title: 'MIG Welders',
+          link: '/mig-welders',
+        },
+        {
+          id: 2,
+          title: 'TIG Welders',
+          link: '/tig-welders',
+        },
+        {
+          id: 3,
+          title: 'STICK Welders',
+          link: '/tig-welders',
+        },
+        {
+          id: 4,
+          title: 'Multi Process Welders',
+          link: '/tig-welders',
+        },
+      ],
+    },
+    {
+      id: 5,
+      menu: 'Gas Equipment',
+      subMenu: 'Plasma Cutting',
+      items: [
+        {
+          id: 1,
+          title: 'MIG Welders',
+          link: '/mig-welders',
+        },
+        {
+          id: 2,
+          title: 'TIG Welders',
+          link: '/tig-welders',
+        },
+        {
+          id: 3,
+          title: 'STICK Welders',
+          link: '/tig-welders',
+        },
+        {
+          id: 4,
+          title: 'Multi Process Welders',
+          link: '/tig-welders',
+        },
+      ],
+    },
+    {
+      id: 4,
+      menu: 'Accessories',
+      subMenu: 'Plasma Cutting',
+      items: [
+        {
+          id: 1,
+          title: 'MIG Welders',
+          link: '/mig-welders',
+        },
+        {
+          id: 2,
+          title: 'TIG Welders',
+          link: '/tig-welders',
+        },
+        {
+          id: 3,
+          title: 'STICK Welders',
+          link: '/tig-welders',
+        },
+        {
+          id: 4,
+          title: 'Multi Process Welders',
+          link: '/tig-welders',
+        },
+      ],
+    },
+  ];
+  return (
+    <nav
+      className={`${
+        isOpen ? 'opacity-100' : 'opacity-0'
+      } transition-opacity megamenu-content p-3  text-black shadow-xl absolute bg-white top-16 -left-8 -mt-2 flex flex-row `}
+    >
+      <ul className="flex flex-col space-y-2 text-white submenu-nav min-w-[217px]">
+        {subMenus?.map((subMenu) => (
+          <li
+            key={subMenu.id}
+            className="group/menu relative italic font-bold text-lg text-grey-900 flex menu-hov"
+          >
+            <span className="rounded px-2 py-1 font-medium text-lg flex flex-row-reverse items-center menu-hov">
+              {' '}
+              <IoIosArrowForward />
+              {subMenu.menu}
+            </span>
+          </li>
+        ))}
+      </ul>
+      <ul className="flex flex-col space-y-2 text-white submenu-nav min-w-[217px]">
+        {subMenus?.map((subMenu) => (
+          <li
+            key={subMenu.id}
+            className="group/menu relative italic font-bold text-lg text-grey-900 flex menu-hov"
+          >
+            <span className="rounded px-2 py-1 font-medium text-lg flex flex-row-reverse items-center menu-hov">
+              {' '}
+              <IoIosArrowForward />
+              {subMenu.menu}
+            </span>
+          </li>
+        ))}
+      </ul>
+      <ul className="flex flex-col space-y-2 text-white submenu-nav min-w-[217px]">
+        {subMenus?.map((subMenu) => (
+          <li
+            key={subMenu.id}
+            className="group/menu relative italic font-bold text-lg text-grey-900 flex menu-hov"
+          >
+            <span className="rounded px-2 py-1 font-medium text-lg flex flex-row-reverse items-center menu-hov">
+              {' '}
+              {subMenu.menu}
+            </span>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  );
+};
 const menuItemsData = [
   {
     title: 'Home',
     url: '/',
     type: 'link',
+    icon: <Home />,
   },
   {
     title: 'Accounts',
     type: 'normal',
+    icon: <Account />,
     submenu: [
       { title: 'Orders', url: '/orders' },
       { title: 'Orders', url: '/orders' },
@@ -376,6 +600,7 @@ const menuItemsData = [
   {
     title: 'Product',
     type: 'megamenu',
+    icon: <Product />,
     submenu: [
       {
         title: 'Web Design',
@@ -413,6 +638,7 @@ const menuItemsData = [
   {
     title: 'Content Management',
     type: 'normal',
+    icon: <Content />,
     submenu: [
       { title: 'Orders', url: '/orders' },
       { title: 'Orders', url: '/orders' },
@@ -423,25 +649,20 @@ const menuItemsData = [
     title: 'My Team',
     type: 'link',
     url: '/about',
+    icon: <MyTeam />,
   },
   {
     title: 'Support',
     type: 'link',
     url: '/support',
+    icon: <Support />,
   },
-  {
-    title: 'Resources',
-    type: 'normal',
-    submenu: [
-      { title: 'Orders', url: '/orders' },
-      { title: 'Orders', url: '/orders' },
-      { title: 'Orders', url: '/orders' },
-    ],
-  },
+
   {
     title: 'Settings',
     type: 'link',
     url: '/settings',
+    icon: <Settings />,
   },
 ];
 type MenuItems = (typeof menuItemsData)[0];
